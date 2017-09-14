@@ -30,6 +30,7 @@ class Demo extends Component {
         {(this: any).renderCell = this.renderCell.bind(this)}
     }
 
+    // 头部刷新
     componentDidMount() {
         this.onHeaderRefresh()
     }
@@ -86,7 +87,7 @@ class Demo extends Component {
                 price: data.price,
             }
         });
-        let dataList = isReload ? newList : [...this.state.dataList, ...newList]
+        let dataList = isReload ? newList : [...this.state.dataList, ...newList];
 
         for (let i = 0; i < dataList.length; i++) {
             dataList[i].id = i
@@ -125,7 +126,7 @@ class Demo extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: Platform.OS == 'ios' ? 20 : 0,
+        marginTop: Platform.OS === 'ios' ? 20 : 0,
     },
     title: {
         fontSize: 18,
